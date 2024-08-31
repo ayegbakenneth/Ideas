@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Form</title>
+    <style>
+        form {
+            color: red; /* Set the color to red */
+            font-weight: bold; /* Make the text bold */
+        }
+
+        button {
+            background-color: #0000ff; /* Set the color to blue */
+            font-weight: bold; /* Make the text bold */
+            color: red; /* Set the text color to red */
+            margin-right: 10px; /* Add some spacing between links */
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>

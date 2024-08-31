@@ -1,0 +1,19 @@
+<style>
+    h1 {
+        color: #ff0000; /* Set the color to red */
+        font-weight: bold; /* Make the text bold */
+    }
+
+    a {
+        color: #0000ff; /* Set the color to blue */
+        font-weight: bold; /* Make the text bold */
+        text-decoration: none; /* Remove underline */
+        margin-right: 10px; /* Add some spacing between links */
+    }
+</style>
+
+<h1>Welcome to Ideas Dashboard</h1>
+<a href="{% url 'logout' %}">Logout</a>
+<!--<a href="{% url 'student_dashboard' %}">Student Dashboard</a>-->
+<a href="{% url 'student_view' %}">Student Profile</a> 
+<a href="{% url 'attendance_view' %}">School Attendance</a>

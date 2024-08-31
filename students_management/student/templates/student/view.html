@@ -1,0 +1,86 @@
+<!--<style>
+    h1 {
+        color: #89d187; /* Set the color to red */
+        font-weight: bold; /* Make the text bold */
+    }
+
+    p {
+        color: #0000ff; /* Set the color to blue */
+        font-weight: bold; /* Make the text bold */
+        text-decoration: none; /* Remove underline */
+        margin-right: 10px; /* Add some spacing between links */
+    }
+</style>
+
+
+
+<!-- student/dashboard.html 
+<h1>Welcome, {{ student.names }}!</h1>
+<p>Profile Picture: {{ student.profile_picture}}</p>
+<p>Student ID: {{ student.student_id }}</p>
+<p>Course: {{ student.get_course_display }}</p>
+<p>Email: {{ student.email_address }}</p>
+<p>Phone Number: {{ student.phone_number }}</p>
+
+
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update Profile">
+</form> -->
+
+
+
+<style>
+    h1 {
+        color: #89d187; /* Set the color to green */
+        font-weight: bold; /* Make the text bold */
+    }
+
+    p {
+        color: #0000ff; /* Set the color to blue */
+        font-weight: bold; /* Make the text bold */
+        text-decoration: none; /* Remove underline */
+        margin-right: 10px; /* Add some spacing between paragraphs */
+    }
+
+    #update-form {
+        display: none; /* Hide the form initially */
+    }
+
+    #profile-picture {
+        max-width: 200px; /* Set a maximum width for the image */
+        max-height: 200px; /* Set a maximum height for the image */
+    }
+</style>
+
+<!-- student/dashboard.html -->
+<h1>Welcome, {{ student.names }}!</h1>
+<img id="profile-picture" src="{{ student.profile_picture }}"alt="Profile Picture" >
+<p>Student ID: {{ student.student_id }}</p>
+<p>Course: {{ student.get_course_display }}</p>
+<p>Email: {{ student.email_address }}</p>
+<p>Phone Number: {{ student.phone_number }}</p>
+
+<button id="update-button">Update Profile</button>
+
+<form id="update-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Update">
+</form>
+
+<script>
+    const updateButton = document.getElementById('update-button');
+    const updateForm = document.getElementById('update-form');
+
+    updateButton.addEventListener('click', () => {
+        updateForm.style.display = 'block'; // Show the form when the button is clicked
+    });
+
+    updateForm.addEventListener('submit', () => {
+        updateForm.style.display = 'none'; // Hide the form after submitting
+    });
+</script>
+
